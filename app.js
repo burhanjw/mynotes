@@ -24,6 +24,12 @@ var app = new Vue({
 				this.Note = '';
 				this.operation = 'add';
 			}
+		},
+		deleteNote(Note) {
+			var result = confirm("Are you sure you want to remove this Note?");
+			if (result) {
+				this.Notes.pop(this.Note);			
+			}
 		}
 			
 	},
