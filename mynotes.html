@@ -2,49 +2,53 @@
   <head>
      <title> MyNotes Vue App </title>
      
-	   <link href="assets/css/bootstrap.css" rel="stylesheet" />
+	<link href="assets/css/bootstrap.css" rel="stylesheet" />
     
-  	 <script src="assets/js/jquery.js"></script>
-  	 <script src="assets/js/bootstrap.js"></script>
+  	<script src="assets/js/jquery.js"></script>
+  	<script src="assets/js/bootstrap.js"></script>
+	<script src="assets/js/vue.js"></script>
   
   </head>
   <body>                      
-     
-     <div class="col-md-12">
-        <h2>My Notes</h2>
-     </div>           
+     <div id = "container">
+        <div class="col-md-12">
+           <h2>My Notes</h2>
+        </div>           
 		 
-     <div class="col-md-12">
-        <h4><u> Add a New Note </u></h4>
-     </div>
+        <div class="col-md-12">
+           <h4><u> Add a New Note </u></h4>
+        </div>
 	   
-     <div class="col-md-6">
-	   		<textarea class = "form-control" placeholder = "Add a New Note..." rows = "5"></textarea></br>
-	   		<button class = "btn btn-primary col-md-3"> Add Note </button>
-		 </div>	
+        <div class="col-md-6">
+	   <textarea class = "form-control" placeholder = "Add a New Note..." rows = "5" v-model = "newNote" ></textarea></br>
+	   <button class = "btn btn-primary col-md-3" @click = "addNote"> Add Note </button>
+	</div>	
 		
-		 <div class="col-md-12" style = "margin-top:20px;">
-        <h4><u> Saved Notes </u></h4>
-     </div>
+	<div class="col-md-12" style = "margin-top:20px;">
+           <h4><u> Saved Notes </u></h4>
+        </div>
      
-     <div class="col-md-12">
-		    <div class="table-responsive">
-	         <table class="table table-striped">
-	            <thead>
-	               <tr>
-	                  <th class="col-md-10">Note</th>
-	                  <th class="col-md-2" ></th>       
-	               </tr>
-	            </thead>
-	            <tbody>  
-	               <tr>
-	                  <td>This is the first note</td>
-	                  <td><button class = "btn btn-info"> Edit Note </button></td>   
-	               </tr>     
-	            </tbody>
-	         </table>
-	      </div>
+        <div class="col-md-12">
+	   <div class="table-responsive">
+	      <table class="table table-striped">
+	         <thead>
+	            <tr>
+	               <th class="col-md-10">Note</th>
+	               <th class="col-md-2" ></th>       
+	            </tr>
+	         </thead>
+	         <tbody>  
+	            <tr v-for = "Note in Notes" >
+	               <td>{{ Note }}</td>
+	               <td><button class = "btn btn-info"> Edit Note </button></td>   
+	            </tr>     
+	         </tbody>
+	      </table>
+	   </div>
+        </div>
      </div>
-     
+
+     <script src="app.js"></script>	
+
    </body>
 </html>
