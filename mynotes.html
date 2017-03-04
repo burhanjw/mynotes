@@ -27,9 +27,10 @@
 	<template v-if="operation === 'edit'">
   		<button class = "btn btn-primary col-md-3" @click = "updateNote()"> Edit Note </button>
 	</template>	   		
-     </div>	
-      		
-     <div class="col-md-12" style = "margin-top:20px;">
+
+		 </div>	
+		
+		 <div class="col-md-12" style = "margin-top:20px;">
         <h4><u> Saved Notes </u></h4>
      </div>
      
@@ -47,6 +48,7 @@
 	                  <td>{{ Note }} 
 			</td>
 	                <td><button class = "btn btn-info" @click = "editNote(Note)"> Edit Note </button>
+			<button class = "btn btn-danger" @click = "deleteNote(Note)"> Delete Note </button></td>   
 	               </tr>     
 	            </tbody>
 	         </table>
