@@ -17,6 +17,7 @@ var app = new Vue({
 			this.Note = Note;		
 			this.operation = 'edit';
 			this.CurrEdit = this.Notes.indexOf(Note);
+			this.$refs.NoteInput.focus();
 		},
 		updateNote() {
 			if(this.Note != ''){			
